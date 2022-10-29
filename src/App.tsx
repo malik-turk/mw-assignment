@@ -1,8 +1,11 @@
-import './assets/styles/app.module.scss';
+// Components
+import Header from './components/Header';
 
 function App(): JSX.Element {
   return (
-    <div></div>
+    <main>
+      <Header />
+    </main>
   );
 }
 

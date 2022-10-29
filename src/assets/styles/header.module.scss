@@ -1,0 +1,23 @@
+@import './variables';
+
+.header-wrapper {
+    width: 100%;
+    background-color: $navy-blue;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 60px 0;
+    
+    h1 {
+        color: $light-gray;
+        max-width: 30%;
+    }
+
+    img {
+        width: 50%;
+    }
+}
