@@ -1,8 +1,8 @@
 @import './variables';
+@import './mixins';
 
 .header-wrapper {
     width: 100%;
-    background-color: $navy-blue;
 }
 
 .header-container {
@@ -20,5 +20,13 @@
     img {
         width: 50%;
         object-fit: cover;
+    }
+}
+
+@include mobile {
+    .header-container {
+        h1 {
+            max-width: auto;
+        }
     }
 }
