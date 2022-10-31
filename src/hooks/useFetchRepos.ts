@@ -4,9 +4,6 @@ import { Octokit } from "octokit";
 // Constants
 import { GHP_TOKEN } from "../constants/constants.value";
 
-// Tyeps
-import { Repo } from "../types/octokit";
-
 /**
  * Fetch repos data based on given query
  */

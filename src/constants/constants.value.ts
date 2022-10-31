@@ -1,1 +1,2 @@
-export const GHP_TOKEN = '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';
+// TODO: should be moved to env file
+export const GHP_TOKEN = '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';
