@@ -11,7 +11,7 @@ import { Repo } from "../types/octokit";
  * Fetch repos data based on given query
  */
 const useFetchRepos = () => {
-  const [data, setData] = useState<Repo[]|unknown>([]);
+  const [data, setData] = useState<any>([]);
 
   const octokit = new Octokit({
     auth: GHP_TOKEN,

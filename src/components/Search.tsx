@@ -13,8 +13,9 @@ import searchClasses from '../assets/styles/search.module.scss';
 
 // Types
 import { Repo } from '../types/octokit';
+import { SearchComponentProps } from '../types/search';
 
-export default function Search() {
+export default function Search({ setSelectedRepos, selectedRepos }: SearchComponentProps) {
     const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
     const { fetchRepos, data } = useFetchRepos();
     const searchRef = useRef(null);
@@ -28,6 +29,19 @@ export default function Search() {
     const handleSearchInput = debounce((e: React.ChangeEvent<HTMLInputElement>) => {
         fetchRepos(e.target.value);
     }, 500);
+
+    /**
+     * Add selected repo to compare list
+     * @param repo repo item
+     */
+    const handleSelectingRepo = (repo: Repo) => {
+        const isRepoExist: boolean = !!selectedRepos.find((selectedRepo) => selectedRepo.id === repo.id);
+        if (isRepoExist) {
+            return;
+        }
+
+        setSelectedRepos([...selectedRepos, repo]);
+    }
 
     return (
         <section className={searchClasses['search-wrapper']}>
@@ -45,7 +59,11 @@ export default function Search() {
                         ${searchClasses['dropdown-items-container']}`
                     }>
                         <ul>
-                            {data.items?.map((repo: Repo) => <li key={repo.id}>{repo.full_name}</li>)}
+                            {data.items?.map((repo: Repo) => (
+                                <li key={repo.id} onClick={() => handleSelectingRepo(repo)}>
+                                    {repo.full_name}
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
