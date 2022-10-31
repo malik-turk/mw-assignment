@@ -15,6 +15,7 @@ For development, you will only need Node.js (16+) installed on your environement
 ### `npm install`
 ### `npm start`
 
+Note: rename '.env.dist' to '.env'
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

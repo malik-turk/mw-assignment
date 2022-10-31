@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Octokit } from "octokit";
 
-// Constants
-import { GHP_TOKEN } from "../constants/constants.value";
-
 /**
  * Fetch repos data based on given query
  */
@@ -11,7 +8,7 @@ const useFetchRepos = () => {
   const [data, setData] = useState<any>([]);
 
   const octokit = new Octokit({
-    auth: GHP_TOKEN,
+    auth: process.env.GHP_TOKEN,
   });
 
   const fetchRepos = async (query: string) => {
