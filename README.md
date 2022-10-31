@@ -15,6 +15,8 @@ For development, you will only need Node.js (16+) installed on your environement
 ### `npm install`
 ### `npm start`
 
+Please note that for local use you need to create a GitHub token and add it to the '.env' file
+
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
