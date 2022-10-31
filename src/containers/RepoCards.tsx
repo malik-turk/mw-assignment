@@ -19,7 +19,12 @@ export default function RepoCards({ setSelectedRepos, selectedRepos }: RepoCards
     <section className={repoCardsClasses['repo-cards-wrapper']}>
         <div className={`${appClasses.container} ${repoCardsClasses['repo-cards-container']}`}>
             {selectedRepos.map((repo) => (
-                <RepoCard key={repo.id} repo={repo} />
+                <RepoCard
+                  key={repo.id}
+                  repo={repo}
+                  setSelectedRepos={setSelectedRepos}
+                  selectedRepos={selectedRepos}
+                />
             ))}
         </div>
     </section>
